@@ -12,7 +12,7 @@ const cors = require('cors')
  // include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
-  accessToken: '',
+  accessToken: '8db0cb5e59d14d309370c75d73bf0c38',
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
@@ -22,8 +22,13 @@ rollbar.log('Hello world!')
 
 
 app.get('/', (req, res) =>{
+    rollbar.info('HTML served!')
     res.sendFile(path.join(__dirname, '/home.html'))
 })
+
+app.use('/js', express.static(path.join(__dirname, '/main.js')))
+
+
 
  app.listen(port, ()=>{
      console.log("listening on port " + port)
