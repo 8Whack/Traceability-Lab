@@ -26,7 +26,7 @@ app.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname, '/home.html'))
 })
 
-app.use('/js', express.static(path.join(__dirname, '/main.js')))
+//app.use('/js', express.static(path.join(__dirname, '/main.js')))
 
 
 
