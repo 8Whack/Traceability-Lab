@@ -24,7 +24,7 @@ app.use(rollbar.errorHandler());
 
 
 app.get('/', (req, res) =>{
-    //rollbar.info('HTML served!')
+    rollbar.info('HTML served!')
     res.sendFile(path.join(__dirname, '/home.html'))
 })
 
