@@ -7,7 +7,8 @@ const cors = require('cors')
 
  app.use(express.json());
  app.use(cors());
-//  app.use(rollbar.errorHandler(0));
+
+//app.use(rollbar.errorHandler(0));
 
 //  // include and initialize the rollbar library with your access token
 // var Rollbar = require('rollbar')
@@ -22,7 +23,7 @@ const cors = require('cors')
 
 
 app.get('/', (req, res) =>{
-    rollbar.info('HTML served!')
+    //rollbar.info('HTML served!')
     res.sendFile(path.join(__dirname, '/home.html'))
 })
 
