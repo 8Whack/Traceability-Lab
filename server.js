@@ -8,18 +8,19 @@ const cors = require('cors')
  app.use(express.json());
  app.use(cors());
 
-//app.use(rollbar.errorHandler(0));
 
-//  // include and initialize the rollbar library with your access token
-// var Rollbar = require('rollbar')
-// var rollbar = new Rollbar({
-//   accessToken: '8db0cb5e59d14d309370c75d73bf0c38',
-//   captureUncaught: true,
-//   captureUnhandledRejections: true,
-// })
+ // include and initialize the rollbar library with your access token
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: '1fee6eb7963e4f34a6cd77f47a80b046',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
 
-// // record a generic message and send it to Rollbar
-// rollbar.log('Hello world!')
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!')
+
+app.use(rollbar.errorHandler());
 
 
 app.get('/', (req, res) =>{
