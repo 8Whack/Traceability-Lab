@@ -3,4 +3,4 @@ function alertOnClick(){
     alert(message)
 }
 
-document.querySelector('button').onclick(alertOnClick) 
+document.querySelector('button').addEventListener('click', alertOnClick) 
